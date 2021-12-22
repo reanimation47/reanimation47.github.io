@@ -1,0 +1,66 @@
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #1C1C20;
+    }
+    div{
+      width: 200px;
+      height: 200px;
+      
+      box-shadow: 16px 14px 20px black;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    div::before{
+      content:"" ;
+      background-image: conic-gradient(
+        #6EC1E4 20deg,
+        transparent 120deg
+      );
+      width: 150%;
+      height: 150%;
+      position: absolute;
+      animation: rotate 2s linear infinite;
+    }
+    div::after{
+      content: "LDAQ.org";
+      color: #6EC1E4;
+      width: 190px;
+      height: 190px;
+      background: rgb(58, 69, 71);
+      position: absolute;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: larger;
+      letter-spacing: 5px;
+      box-shadow: inset 20px 20px 20px #000000;
+    }
+    @keyframes rotate {
+      0%{
+        transform: rotate(0deg);
+      }
+      100%{
+        transform: rotate(-360deg);
+      }
+      
+    }
+    
+  
+  </style>
+  <body>
+    <div></div>
+  </body>
