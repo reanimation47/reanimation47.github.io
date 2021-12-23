@@ -1,0 +1,1 @@
+Animated svg image techniques.
