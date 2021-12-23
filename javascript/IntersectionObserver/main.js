@@ -9,7 +9,7 @@ const observer = new IntersectionObserver(entries =>{
   console.log(entries)
 }, {
   // threshold: 1,
-  rootMargin: "-150px",
+  rootMargin: "-220px",
 });
 cards.forEach(card => {
   observer.observe(card)
