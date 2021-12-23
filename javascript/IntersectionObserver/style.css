@@ -6,10 +6,11 @@
 }
 
 .card{
+  font-size: 400%;
   background: white;
   border: 1px solid black;
   border-radius: .25rem;
-  padding: .5rem;
+  padding: 2.5rem;
   transform: translateX(100px);
   opacity: 0;
   transition: 150ms;
