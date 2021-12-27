@@ -1,16 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.d195da46.css",
-    "main.js": "/static/js/main.1edb9379.js",
-    "static/js/787.6924bc5c.chunk.js": "/static/js/787.6924bc5c.chunk.js",
-    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/index.html",
-    "main.d195da46.css.map": "/static/css/main.d195da46.css.map",
-    "main.1edb9379.js.map": "/static/js/main.1edb9379.js.map",
-    "787.6924bc5c.chunk.js.map": "/static/js/787.6924bc5c.chunk.js.map"
+    "main.css": "
+reanimation47.github.io/css/tailwind/navbar/static/css/main.d195da46.css",
+    "main.js": "
+reanimation47.github.io/css/tailwind/navbar/static/js/main.1edb9379.js",
+    "static/js/787.6924bc5c.chunk.js": "
+reanimation47.github.io/css/tailwind/navbar/static/js/787.6924bc5c.chunk.js",
+    "static/media/logo.svg": "
+reanimation47.github.io/css/tailwind/navbar/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "
+reanimation47.github.io/css/tailwind/navbar/index.html",
+    "main.d195da46.css.map": "
+reanimation47.github.io/css/tailwind/navbar/static/css/main.d195da46.css.map",
+    "main.1edb9379.js.map": "
+reanimation47.github.io/css/tailwind/navbar/static/js/main.1edb9379.js.map",
+    "787.6924bc5c.chunk.js.map": "
+reanimation47.github.io/css/tailwind/navbar/static/js/787.6924bc5c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d195da46.css",
-    "static/js/main.1edb9379.js"
+    "
+reanimation47.github.io/css/tailwind/navbar/static/css/main.d195da46.css",
+    "
+reanimation47.github.io/css/tailwind/navbar/static/js/main.1edb9379.js"
   ]
 }
