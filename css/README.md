@@ -1,1 +1,1 @@
-Cool / Important css effects replicated by either copying or following youtube tutorials.
+Cool / Important css effects replicated by either duplicating or following youtube tutorials.
