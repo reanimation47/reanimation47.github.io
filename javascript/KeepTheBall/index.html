@@ -13,14 +13,19 @@
 
 <body>
     <h1 id="score">0</h1>
+    <div>
+        
+    </div>
 
     <script>
-        var width = 500;
+        var width = 350;
         var height = 500;
 
         function pickRandom(){
-            return 20 + Math.random()* 400
+            return 20 + Math.random()* 300
         }
+
+       
 
         //Create SVG element
 
@@ -32,10 +37,13 @@
 
         //Create
         let score = 0;
-        let scoreNum = document.getElementById("score")
+        let scoreNum = document.getElementById("score");
 
+       
 
-        let balloon = svg.append('circle').attr('fill', 'red').attr('r', 35).attr('cx', pickRandom()).attr('cy', 35);
+        
+        var balloon = svg.append('circle').attr('fill', 'red').attr('r', 35).attr('cx', pickRandom()).attr('cy', 35);
+        
         balloon.on('click', (___) => {
             score = score + 1;
             scoreNum.innerHTML = score;
