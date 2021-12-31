@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <title>KeepTheBall</title>
+    <style>
+        svg {
+            border: 5px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+        var width = 500;
+        var height = 500;
+
+        function pickRandom(){
+            return 20 + Math.random()* 400
+        }
+
+        //Create SVG element
+
+        let svg = d3.select("body")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .attr("id", "target");
+
+        //Create
+        let balloon = svg.append('circle').attr('fill', 'red').attr('r', 35).attr('cx', pickRandom()).attr('cy', 35);
+        balloon.on('click', (___) => {
+            balloon.interrupt().attr('cy', 35).attr('cx', pickRandom());
+            balloon.transition().ease(d3.easeQuadIn).attr('cy', 450).duration(1000).remove();
+        });
+    </script>
+</body>
+
+
+</html>
