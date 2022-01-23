@@ -1,0 +1,1 @@
+Pure html calculator.
