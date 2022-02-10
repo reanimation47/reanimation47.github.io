@@ -1,27 +1,31 @@
-<html><head>
-    <title>Get crypto data in real time</title>
-</head><body>
-  <a href="https://nomics.com">Crypto Market Cap & Pricing Data Provided By Nomics</a>
-    <p id='info'></p>
-    <p id='infotime'></p>
-</body><script>
-const getBtcData = async () => {
-  fetch("https://api.nomics.com/v1/currencies/ticker?key=9e76ca0b9a1260eaf5b6f6f196e061d83273e64c&ids=BTC&interval=1d,30d&convert=EUR&per-page=100&page=1")
-    .then(response => response.json())
-    .then(data => {
-      
-      console.log(data)
-      document.getElementById("info").innerHTML = '<b>1 BTC = ' + data.price + ' USD</b>'
-    })
-    
+<!DOCTYPE html>
+<html lang="en">
 
-}
-getBtcData();
-// tcount=setInterval(function(){
-//   tcount++
-//   if (tcount==10) {getBtcData(); tcount=0}
-//   document.getElementById("infotime").innerHTML = 'Next update in ' + (10-tcount) + ' seconds'
-// },1000);
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-</script>
+<body>
+    <p id="BTCprice"></p>
+    <p class="BTC1d"></p>
+
+
+
+    <script>
+        const getBtcData = async () => {
+            fetch("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH&tsyms=USD")
+                .then(response => response.json())
+                .then(data => {
+
+                    console.log(data)
+                    document.getElementById("BTCprice").innerHTML = '<b>1 BTC = ' + ((data['DISPLAY'])['BTC'])['USD'].PRICE + ' USD</b>'
+                })
+        }
+        getBtcData();
+    </script>
+</body>
+
 </html>
