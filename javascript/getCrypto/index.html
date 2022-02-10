@@ -34,7 +34,7 @@
         }
 
   const getBtcData = async () => {
-    fetch("https://api.nomics.com/v1/currencies/ticker?key=9e76ca0b9a1260eaf5b6f6f196e061d83273e64c&ids=BTC,ETH,LTC&interval=1d,30d&per-page=100&page=1")
+    fetch("https://cors-anywhere.herokuapp.com/https://api.nomics.com/v1/currencies/ticker?key=9e76ca0b9a1260eaf5b6f6f196e061d83273e64c&ids=BTC,ETH,LTC&interval=1d,30d&per-page=100&page=1")
       .then(response => response.json())
       .then(data => {
         console.log(data)
