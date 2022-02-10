@@ -1,0 +1,75 @@
+<html>
+
+<head>
+  <title>Crypto test</title>
+  <style>
+    .red {
+      color: red;
+    }
+
+    .green {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="https://nomics.com">Crypto Market Cap & Pricing Data Provided By Nomics</a>
+  <p id='BTCprice'></p>
+  <p id='BTC30d'></p>
+  <p id='BTCdom'></p>
+  <p>-----------------------------------</p>
+  <p id='ETHprice'></p>
+  <p id='ETH30d'></p>
+  <p id='ETHdom'></p>
+  <p>-----------------------------------</p>
+  <p id='infotime'></p>
+ 
+</body>
+<script>
+  function numberWithCommas(x) {
+        var parts = x.toString().split(".");
+        parts[0]=parts[0].replace(/\B(?=(\d{3})+(?!\d))/g,".");
+        return parts.join(",");
+        }
+
+  const getBtcData = async () => {
+    fetch("https://api.nomics.com/v1/currencies/ticker?key=9e76ca0b9a1260eaf5b6f6f196e061d83273e64c&ids=BTC,ETH,LTC&interval=1d,30d&per-page=100&page=1")
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        let a = parseFloat(data[0].price)
+        
+        console.log(a.toFixed(2))
+        document.getElementById('BTCprice').innerHTML = 'Bitcoin price rn is ' + numberWithCommas(roundTwo((data[0].price))) + ' USD'
+        document.getElementById('BTC30d').innerHTML = 'Compared to last 30 days: ' + roundTwo((data[0])['30d'].price_change_pct*100 )+ ' %'
+        function roundTwo(x){
+          return parseFloat(x).toFixed(2)
+        }
+        function thirtyDays(index, id) {
+          if ((data[index])['30d'].price_change_pct > 0) {
+            document.getElementById(id).classList.add('green')
+          } else {
+            document.getElementById(id).classList.add('red')
+          }
+        }
+        document.getElementById('ETHprice').innerHTML = 'Ethereum price rn is ' + numberWithCommas(roundTwo((data[1].price))) + ' USD'
+        document.getElementById('ETH30d').innerHTML = 'Compared to last 30 days: ' + roundTwo((data[1])['30d'].price_change_pct*100) + ' %'
+
+        document.getElementById('BTCdom').innerHTML = 'Market dominance: '+ roundTwo(data[0].market_cap_dominance*100) +' %'
+        document.getElementById('ETHdom').innerHTML = 'Market dominance: '+ roundTwo(data[1].market_cap_dominance*100) +' %'
+
+        thirtyDays(0, 'BTC30d')
+        thirtyDays(1,"ETH30d")
+      })
+  }
+  getBtcData();
+tcount=setInterval(function(){
+  tcount++
+  if (tcount==10) {getBtcData(); tcount=0}
+  document.getElementById("infotime").innerHTML = 'Next update in ' + (10-tcount) + ' seconds'
+},1000);
+
+</script>
+
+</html>
