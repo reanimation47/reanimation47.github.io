@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="cryto-hot">
+		<div class="container">
+			<ul class="list-inline">
+				<li class="item-inline">
+					<div class="relative-section">
+						<div class="name">BNB/BUSD</div>
+						<span class="cryto-up">+8.81%</span>
+						<b>$466.33</b>
+					</div>
+				</li>
+				<li class="item-inline">
+					<div class="relative-section">
+						<div class="name">BNB/BUSD</div>
+						<span class="cryto-up">+8.81%</span>
+						<b>$466.33</b>
+					</div>
+				</li>
+				<li class="item-inline">
+					<div class="relative-section">
+						<div class="name">BNB/BUSD</div>
+						<span class="cryto-down">+8.81%</span>
+						<b>$466.33</b>
+					</div>
+				</li>
+				<li class="item-inline">
+					<div class="relative-section">
+						<div class="name">BNB/BUSD</div>
+						<span class="cryto-down">+8.81%</span>
+						<b>$466.33</b>
+					</div>
+				</li>
+				<li class="item-inline">
+					<div class="relative-section">
+						<div class="name">BNB/BUSD</div>
+						<span class="cryto-down">+8.81%</span>
+						<b>$466.33</b>
+					</div>
+				</li>
+			</ul>
+		</div>		
+	</div>
+    <p class="abc" id="BTCprice">abcd</p>
+    <p class="BTC1d"></p>
+
+
+
+    <script>
+        const getBtcData = async () => {
+            fetch("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH&tsyms=USD")
+                .then(response => response.json())
+                .then(data => {
+
+                    console.log(data)
+                    document.getElementsByClassName("relative-section")[0].children[0].innerHTML = '<b>1 BTC = ' + ((data['DISPLAY'])['BTC'])['USD'].PRICE + ' USD</b>'
+                })
+        }
+        getBtcData();
+
+        document.getElementsByClassName('name')[1].innerText = 'abc'
+    </script>
+</body>
+
+</html>
