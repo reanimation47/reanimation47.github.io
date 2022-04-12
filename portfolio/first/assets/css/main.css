@@ -1307,7 +1307,6 @@ input, select, textarea {
 
 	body {
 		background: rgb(0,0,34);
-background: linear-gradient(90deg, rgba(0,0,34,1) 71%, rgba(87,74,226,1) 100%);
 		background-repeat: repeat, no-repeat;
 		background-size: auto, 100% 100%;
 		background-attachment: fixed;
@@ -1534,7 +1533,8 @@ background: linear-gradient(90deg, rgba(0,0,34,1) 71%, rgba(87,74,226,1) 100%);
 
 		header > p {
 			margin: 0.5em 0 0 0;
-			color: rgb(170, 170, 170);
+			color: rgb(139, 139, 151);
+			
 		}
 
 		@media screen and (max-width: 736px) {
@@ -1948,7 +1948,7 @@ background: linear-gradient(90deg, rgba(0,0,34,1) 71%, rgba(87,74,226,1) 100%);
 		position: relative;
 		overflow: hidden;
 		width: 100%;
-		background: #ffffff;
+		background: rgba(22, 22, 26, 0.6);
 		box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.25);
 		-moz-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
 		-webkit-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
@@ -2098,7 +2098,7 @@ background: linear-gradient(90deg, rgba(0,0,34,1) 71%, rgba(87,74,226,1) 100%);
 
 					#main > .panel.intro header p {
 						letter-spacing: -0.015em;
-						font-size: 1.25em;
+						font-size: 0.9em;
 						margin: 0.25em 0 0 0;
 					}
 
@@ -2190,3 +2190,9 @@ background: linear-gradient(90deg, rgba(0,0,34,1) 71%, rgba(87,74,226,1) 100%);
 			}
 
 		}
+
+
+/* Title */
+.main-title{
+	color:rgb(223, 223, 240)
+}
